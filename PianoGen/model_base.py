@@ -13,8 +13,10 @@ class ModelBase(ABC):
             Should include code to download the file from Google drive if necessary.
             else, construct the model
         '''
+        print('creating model')
         if load_trained:
-            logging.info('load model from file ...')
+            print('loading')
+            #logging.info('load model from file ...')
 
     @abstractmethod
     def train(self, x):
@@ -24,7 +26,7 @@ class ModelBase(ABC):
         and for critic training, x will be a tuple of two tensors (data, label)
         :return: (mean) loss of the model on the batch
         '''
-        pass
+        print('train function called')
 
 class ComposerBase(ModelBase):
     '''
@@ -37,7 +39,7 @@ class ComposerBase(ModelBase):
         :param n: length of the sequence to be generated
         :return: the generated sequence
         '''
-        pass
+        print('composing')
 
 class CriticBase(ModelBase):
     '''
@@ -50,4 +52,4 @@ class CriticBase(ModelBase):
         :param x: a music sequence
         :return: the score between 0 and 1 that reflects the quality of the music: the closer to 1, the better
         '''
-        pass
+        print('called score')

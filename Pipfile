@@ -7,6 +7,9 @@ name = "pypi"
 numpy = "*"
 torch = "*"
 matplotlib = "*"
+pandas = "*"
+sklearn = "*"
+pretty-midi = "*"
 
 [requires]
 python_version = "3.6"
